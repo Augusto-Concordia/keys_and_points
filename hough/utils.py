@@ -14,7 +14,7 @@ def create_line(rho, theta, img):
     xs = []
     ys = []
     # Transform a point in Hough space to a line in xy-space.
-    a = - (np.cos(theta)/np.sin(theta)) # slope of the line
+    a = (np.sin(theta)/np.cos(theta)) # slope of the line
     b = (rho/np.sin(theta)) # y-intersect of
     for x in range(img.shape[1]):
         y = a * x + b
@@ -23,14 +23,3 @@ def create_line(rho, theta, img):
             ys.append(int(round(y)))
 
     return xs, ys
-
-def create_line_endpoints(rho, theta, img):
-    # Transform a point in Hough space to a line in xy-space.
-    a = - (np.cos(theta)/np.sin(theta)) # slope of the line
-    b = (rho/np.sin(theta)) # y-intersect of
-    x0 = 0
-    y0 = int(b)
-    x1 = img.shape[1]
-    y1 = int(a * x1 + b)
-
-    return x0, y0, x1, y1
