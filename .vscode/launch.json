@@ -11,6 +11,14 @@
             "program": "${workspaceFolder}/hough/hough.py",
             "cwd": "${workspaceFolder}/hough",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Debugger: Homography",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/homography/run.py",
+            "cwd": "${workspaceFolder}/homography",
+            "console": "integratedTerminal"
         }
     ]
 }
